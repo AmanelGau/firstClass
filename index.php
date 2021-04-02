@@ -2,29 +2,18 @@
 
 require_once 'Bicycle.php';
 require_once 'Car.php';
+require_once 'Truck.php';
 
-$bike = new Bicycle("blue");
-var_dump($bike);
+$bicycle = new Bicycle('blue', 1);
+echo $bicycle->forward();
+var_dump($bicycle);
 
-$bike->color = 'blue';
-$bike->currentSpeed = 0;
-var_dump($bike); // then, another dump.
+$car = new Car('green', 4, 'electric');
+echo $car->forward();
+var_dump($car);
 
-echo $bike->forward();
-echo '<br> Vitesse du vélo : ' . $bike->currentSpeed . ' km/h' . '<br>';
-echo $bike->brake();
-echo '<br> Vitesse du vélo : ' . $bike->currentSpeed . ' km/h' . '<br>';
-echo $bike->brake();
 
-$redCar = new Car("Red", 5, "Electricity");
-var_dump($redCar);
-
-echo $redCar->start();
-echo '<br> Vitesse de la voiture : ' . $redCar->getCurrentSpeed() . ' km/h' . '<br>';
-echo $redCar->forward();
-echo $redCar->forward();
-echo $redCar->forward();
-echo $redCar->forward();
-echo '<br> Vitesse de la voiture : ' . $redCar->getCurrentSpeed() . ' km/h' . '<br>';
-echo $redCar->brake();
-echo '<br> Vitesse de la voiture : ' . $redCar->getCurrentSpeed() . ' km/h' . '<br>';
+$truck = new Truck('red', 6, 25);
+echo $truck->forward();
+$truck->setLoad(15);
+var_dump($truck);
