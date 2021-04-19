@@ -19,6 +19,7 @@ class Car extends Vehicle{
 
     private string $energy;
     private int $energyLevel = 100;
+    private bool $hasParkBrake = true;
 
     /*
      *      Constructors
@@ -55,9 +56,21 @@ class Car extends Vehicle{
         return $this;
     }
 
+    public function setParkBrake(bool $hasParkBrake): Car
+    {
+        $this->hasParkBrake = $hasParkBrake;
+        return $this;
+    }
+
     /*
      *      Methods
      */
 
-    
+    public function start()
+    {
+        if($this->hasParkBrake){
+            throw new Exception('Park brake on!!');
+        }
+    }
+
 }
