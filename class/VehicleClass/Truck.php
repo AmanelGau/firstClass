@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Vehicle.php';
-require_once '/interface/LightableInterface.php';
+require_once __DIR__ . '/../../interface/LightableInterface.php';
 
 class Truck extends Vehicle implements LightableInterface
 {

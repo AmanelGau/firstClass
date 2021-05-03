@@ -1,13 +1,14 @@
 <?php
 
 require_once 'Vehicle.php';
+require_once __DIR__ . '/../../interface/LightableInterface.php';
 
 // Bicycle.php
 class Bicycle extends Vehicle implements LightableInterface
 {
     public function switchOn(): bool
     {
-        if ($this->currentSpeed > 10) {
+        if (isset($this->currentSpeed) && $this->currentSpeed > 10) {
             return true;
         } else {
             return false;
