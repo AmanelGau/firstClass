@@ -3,7 +3,8 @@
 require_once 'Vehicle.php';
 
 
-class Car extends Vehicle{
+class Car extends Vehicle implements LightableInterface
+{
 
     /*
      *      Attributs
@@ -73,4 +74,13 @@ class Car extends Vehicle{
         }
     }
 
+    public function switchOn(): bool
+    {
+        return true;
+    }
+
+    public function switchOff(): bool
+    {
+        return false;
+    }
 }
